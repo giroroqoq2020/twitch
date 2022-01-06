@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 微軟正黑體;
+        }
+        header {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+            background-color: rgb(184, 183, 235);
+            padding-right: 20px;
+            top: 0;
+
+        }
+
+        .logo {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            margin-left: 15px;
+            /* background-color: rgb(175, 39, 39); */
+        }
+
+        nav {
+            margin-left: 70px;
+        }
+
+        .menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-btn {
+            margin-left: 10px;
+        }
+
+        .search-bar {
+            display: flex;
+        }
+
+        .search-btn {
+            width: 35px;
+            height: 36px;
+
+        }
+
+        .member {
+            display: flex;
+        }
+
+        .sign-in-sign-up {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sign-up {
+            margin-left: 10px;
+        }
+
+        .sign-in {
+            margin-left: 10px;
+        }
+
+        .prime-btn {
+            width: 20px;
+            height: 20px;
+            /* background-color: brown; */
+        }
+
+        .core-btn {
+            width: 20px;
+            height: 20px;
+            /* background-color: burlywood; */
+            margin-left: 10px;
+        }
+
+        aside {
+            position: fixed;
+            height: calc(100vh - 50px);
+            width: 50px;
+            background-color: darkgrey;
+            bottom: 0;
+            left: 0;
+            display: flex;
+        }
+
+        .container {
+            padding: 25px 25px;
+        }
+
+        main {
+            /* display: flex; */
+            margin: 50px 0 0 50px;
+        }
+
+        .e-sprot>.row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .e-sprot>.row>.col {
+            min-width: 293px;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+
+        .e-sprot-d {
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 45px;
+            font-weight: bold;
+        }
+
+        .game-card {
+            border-radius: 10px;
+            padding: 8px;
+            background-color: rgb(150, 150, 161);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .game-img {
+
+            width: 40px;
+            height: 50px;
+            background-color: darkcyan;
+
+        }
+
+        .game-info {
+            width: 182px;
+            font-size: 13px;
+
+        }
+
+        .live-block {
+            height: 50px;
+        }
+
+        .live {
+            background-color: rgb(255, 0, 0);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 13px;
+            display: inline;
+        }
+
+        .game-info>p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .streamblock {
+            display: flex;
+        }
+        .highlight{
+            width: 33.33%;
+        }
+        .streamblock>.row{
+            display: flex;
+            flex-wrap: wrap;
+            width: 66.66%;
+        }
+        .streamblock>.row>.col{
+            max-width: calc(25% - 20px);
+            padding: 0 10px;
+        }
+        .highlight .thumbnail{
+            height: 331px;
+        }
+        .stream-group .thumbnail{
+            background-color: sienna;
+            height: 160px;
+        }
+        .thumbnail{
+            width: 100%;
+            position: relative;
+            background-color: darkcyan;
+        }
+        .thumbnail>.live{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+        }
+        .audience{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 5px;
+            position: absolute;
+            color: seashell;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="twitchimg/twitch.jpg" class="logo">
+
+        <nav>
+            <ul class="menu">
+                <li class="menu-btn">
+                    <a href="">
+                        瀏覽
+                    </a>
+                </li>
+                <li class="menu-btn">
+                    <a href="">
+                        電競
+                    </a>
+                </li>
+                <li class="menu-btn">
+                    <a href="">
+                        音樂
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" class="search-input">
+            <img src="twitchimg/search.jpg" class="search-btn">
+        </div>
+
+        <div class="member">
+            <div class="prime-btn">
+                <img src="twitchimg/mail.jpg" class="prime-btn" alt="">
+            </div>
+            <ul class="sign-in-sign-up">
+                <li class="sign-in">
+                    <a href="">
+                        登入
+                    </a>
+                </li>
+                <li class="sign-up">
+                    <a href="">
+                        註冊
+                    </a>
+                </li>
+            </ul>
+            <div class="core-btn">
+                <img src="twitchimg/member.jpg" class="core-btn" alt="">
+            </div>
+
+        </div>
+    </header>
+    <aside>
+
+    </aside>
+
+    <main>
+        <div class="container">
+            <div class="e-sprot">
+                <h1>電競</h1>
+                <p class="e-sprot-d">
+                    即時賽況、賽事精華和您最愛的職業玩家都在這裡
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數：8704
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">
+                                    Live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+            </div>
+
+            <div class="streaming">
+                <h2>實況中的對戰</h2>
+                <p class="live-description">我們認為您會喜歡的最精采 Live 比賽和對戰</p>
+                <div class="streamblock">
+                    <div class="highlight">
+                        <div class="highlight-card">
+                            <div class="thumbnail">
+                                <div class="live">Live</div>
+                                <div class="audience">觀眾人數：8787</div>
+                            </div>
+                            <div class="stream-info">
+                                <div class="streamer">
+                                    <div class="avatar"></div>
+                                    <div class="name">狗屎</div>
+                                </div>
+                                <div class="stream-title">
+                                    NRG s0m W STREAMER
+                                </div>
+                                <div class="stream-game">
+                                    VALORANT
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row stream-group">
+                        <div class="col">
+                            <div class="highlight-card">
+                                <div class="thumbnail">
+                                    <div class="live">Live</div>
+                                    <div class="audience">觀眾人數：8787</div>
+                                </div>
+                                <div class="stream-info">
+                                    <div class="streamer">
+                                        <div class="avatar"></div>
+                                        <div class="name">狗屎</div>
+                                    </div>
+                                    <div class="stream-title">
+                                        NRG s0m W STREAMER
+                                    </div>
+                                    <div class="stream-game">
+                                        VALORANT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="highlight-card">
+                                <div class="thumbnail">
+                                    <div class="live">Live</div>
+                                    <div class="audience">觀眾人數：8787</div>
+                                </div>
+                                <div class="stream-info">
+                                    <div class="streamer">
+                                        <div class="avatar"></div>
+                                        <div class="name">狗屎</div>
+                                    </div>
+                                    <div class="stream-title">
+                                        NRG s0m W STREAMER
+                                    </div>
+                                    <div class="stream-game">
+                                        VALORANT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="highlight-card">
+                                <div class="thumbnail">
+                                    <div class="live">Live</div>
+                                    <div class="audience">觀眾人數：8787</div>
+                                </div>
+                                <div class="stream-info">
+                                    <div class="streamer">
+                                        <div class="avatar"></div>
+                                        <div class="name">狗屎</div>
+                                    </div>
+                                    <div class="stream-title">
+                                        NRG s0m W STREAMER
+                                    </div>
+                                    <div class="stream-game">
+                                        VALORANT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="highlight-card">
+                                <div class="thumbnail">
+                                    <div class="live">Live</div>
+                                    <div class="audience">觀眾人數：8787</div>
+                                </div>
+                                <div class="stream-info">
+                                    <div class="streamer">
+                                        <div class="avatar"></div>
+                                        <div class="name">狗屎</div>
+                                    </div>
+                                    <div class="stream-title">
+                                        NRG s0m W STREAMER
+                                    </div>
+                                    <div class="stream-game">
+                                        VALORANT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="highlight-card">
+                                <div class="thumbnail">
+                                    <div class="live">Live</div>
+                                    <div class="audience">觀眾人數：8787</div>
+                                </div>
+                                <div class="stream-info">
+                                    <div class="streamer">
+                                        <div class="avatar"></div>
+                                        <div class="name">狗屎</div>
+                                    </div>
+                                    <div class="stream-title">
+                                        NRG s0m W STREAMER
+                                    </div>
+                                    <div class="stream-game">
+                                        VALORANT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
